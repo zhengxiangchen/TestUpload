@@ -26,7 +26,7 @@ Page({
     })
 
     wx.request({
-      url: 'http://192.168.1.205:8080/api_v1/wx/myself/getLikeAndShare',
+      url: 'http://127.0.0.1:8080/api_v1/wx/myself/getLikeAndShare',
       data:{
         openId: app.globalData.openId
       },
@@ -74,7 +74,7 @@ Page({
     wx.showNavigationBarLoading() //在标题栏中显示加载
     var that = this;
     wx.request({
-      url: 'http://192.168.1.205:8080/api_v1/wx/myself/getLikeAndShare',
+      url: 'http://127.0.0.1:8080/api_v1/wx/myself/getLikeAndShare',
       data: {
         openId: app.globalData.openId
       },

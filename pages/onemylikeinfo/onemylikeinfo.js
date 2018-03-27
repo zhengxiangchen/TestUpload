@@ -22,7 +22,7 @@ Page({
       id: options.id
     })
     wx.request({
-      url: 'http://192.168.1.205:8080/api_v1/wx/discover/getDiscoverInfo',
+      url: 'http://127.0.0.1:8080/api_v1/wx/discover/getDiscoverInfo',
       data: {
         pictureUploadLogsId: that.data.id
       },
@@ -50,7 +50,7 @@ Page({
     }),
 
       wx.request({
-        url: 'http://192.168.1.205:8080/api_v1/wx/discover/toCheckLike',
+        url: 'http://127.0.0.1:8080/api_v1/wx/discover/toCheckLike',
         data: {
           openId: app.globalData.openId,
           pictureUploadLogsId: that.data.id
@@ -108,7 +108,7 @@ Page({
     })
 
     wx.request({
-      url: 'http://192.168.1.205:8080/api_v1/wx/discuss/getMoreDiscuss',
+      url: 'http://127.0.0.1:8080/api_v1/wx/discuss/getMoreDiscuss',
       data: {
         itemsLength: that.data.oneDiscoverInfo.discussInfo.length,
         pictureUploadLogsId: that.data.id
@@ -141,7 +141,7 @@ Page({
       path: '/pages/onediscover/onediscover?id=' + that.data.id,
       success: function (res) {
         wx.request({
-          url: 'http://192.168.1.205:8080/api_v1/wx/discover/share',
+          url: 'http://127.0.0.1:8080/api_v1/wx/discover/share',
           data: {
             pictureUploadLogsId: that.data.id
           },
@@ -248,7 +248,7 @@ Page({
         success: function (res) {
           if (res.confirm) {
             wx.request({
-              url: 'http://192.168.1.205:8080/api_v1/wx/discover/toChangeLike',
+              url: 'http://127.0.0.1:8080/api_v1/wx/discover/toChangeLike',
               data: {
                 openId: app.globalData.openId,
                 pictureUploadLogsId: that.data.id

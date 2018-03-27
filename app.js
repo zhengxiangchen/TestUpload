@@ -71,7 +71,7 @@ App({
             if (loginCode) {
               //发起网络请求
               wx.request({
-                url: 'http://192.168.1.205:8080/api_v1/wx/user/receiveCode',
+                url: 'http://127.0.0.1:8080/api_v1/wx/user/receiveCode',
                 data: {
                   loginCode: loginCode
                 },
@@ -97,7 +97,7 @@ App({
                       that.globalData.user.language = res.userInfo.language;
 
                       wx.request({
-                        url: "http://192.168.1.205:8080/api_v1/wx/user/login",
+                        url: "http://127.0.0.1:8080/api_v1/wx/user/login",
                         data: {
                           userString: that.globalData.user,
                         }
