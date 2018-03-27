@@ -1,0 +1,79 @@
+<view>
+  <swiper style='height:{{viewHeight}}rpx' indicator-dots='{{true}}' duration='500' current='0'>
+    <swiper-item>
+      <image src='{{oneDiscoverInfo.simplifyPictureUrl}}' mode="widthFix" style="width: 100%;" bindtap='preview' bindlongpress='longtap'/>
+    </swiper-item>
+    <swiper-item>
+      <image src='{{oneDiscoverInfo.pictureUrl}}' mode="widthFix" style="width: 100%;" bindtap='preview' bindlongpress='longtap'/>
+    </swiper-item>
+  </swiper>
+  <view class="work-header">
+    <view class="work-author">
+      <image src="{{oneDiscoverInfo.userHeadPicture}}" class="author-image"></image>
+      <view>
+        <view class="author-name">{{oneDiscoverInfo.nickName}}</view>
+        <view class="author-misc">{{oneDiscoverInfo.uploadTime}}</view>
+      </view>
+    </view>
+    <view class="work-view">
+      <view wx:if="{{likePicture}}">
+        {{oneDiscoverInfo.likeNumber}}
+        <image src="/images/like_check.png" class="work-eye" bindtap='toChange'/>
+        {{oneDiscoverInfo.shareNumber}}
+        <button open-type='share' size='mini'>分享</button>
+      </view>
+      <view wx:else>
+        {{oneDiscoverInfo.likeNumber}}
+        <image src="/images/like.png" class="work-eye" bindtap='toChange'/>
+        {{oneDiscoverInfo.shareNumber}}
+        <button open-type='share' size='mini'>分享</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="container">
+    <view class="que-operate flex-wrp">
+      <view class="invite flex-item">
+          <text>评论区</text>
+      </view>
+    </view>
+    <view class="answer-feed">
+      <block wx:if="{{oneDiscoverInfo.discussInfo.length <= 0}}">
+        <view class="feed-item">
+            <view class="feed-source">
+              <view class="avatar"></view>
+              <text>无评论</text>
+            </view>
+        </view>
+      </block>
+
+      <block wx:else>
+        <view class="feed-item" wx:for="{{oneDiscoverInfo.discussInfo}}" wx:key="id">
+            <view class="feed-source">
+              <view class="avatar">
+                  <image src="{{item.userHeadPicture}}"></image>
+              </view>
+              <text>{{item.nickName}}</text>
+              <text>{{item.discussTime}}</text>
+            </view>
+            <view class="feed-content">
+                <view class="answer-body">
+                    <view>
+                        <text class="answer-txt">{{item.discussContent}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+      </block>
+    </view>
+  </view>
+
+  <view class="comment-fixed">
+    <form bindsubmit="formSubmit">
+      <view class="cf-box">
+        <textarea class="cf-content" maxlength="200" name="textarea" value='{{content}}' auto-height placeholder="我来说两句" />
+        <button class="cf-send touch-active" formType="submit">发送</button>
+      </view>
+    </form>
+  </view>
+</view>

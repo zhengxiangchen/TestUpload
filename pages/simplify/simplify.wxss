@@ -1,0 +1,6 @@
+/* pages/simplify/simplify.wxss */
+.button{
+    display: flex;
+    flex-direction: row;
+}
+

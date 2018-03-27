@@ -1,0 +1,11 @@
+/* Pages/scope/scope.wxss */
+.btn{
+  margin-top: 20%;
+  width: 90%;
+}
+
+.img{
+  text-align: center;
+  width: 105%; 
+  height: 285px;
+}

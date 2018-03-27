@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="text" wx:if="{{tempFilePaths.length <= 0}}">
+    <image src="../../images/add.png" mode="scaleToFill" style="width: 500rpx; height: 500rpx" bindtap='chooseimage'/>
+    <text style="margin-top:150rpx;">请上传图片</text>
+  </view>
+  <view wx:else>
+    <image src="{{tempFilePaths}}" mode="widthFix" bindtap='chooseimage'/>
+    <button type='primary' style="margin-top:150rpx;" bindtap="simplify">简化图片</button>
+  </view>
+</view>

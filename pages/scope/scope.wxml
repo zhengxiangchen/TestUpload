@@ -1,0 +1,4 @@
+<view>
+  <image class='img' src='../../images/scope.png'></image>
+  <button class='btn' type="primary" bindtap='openSetting'>立即授权</button>
+</view>

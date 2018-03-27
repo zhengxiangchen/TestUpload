@@ -1,0 +1,20 @@
+<view class="broadcast">
+  <view class="braodcast-list">
+      <view class="braodcast-item" wx:for="{{items}}" wx:key="id">
+          <view class="braodcast-image-container" id="{{item.id}}" bindtap='toOneDiscover'>
+              <image class="braodcast-image" src="{{item.pictureUrl}}"></image>
+          </view>
+          <view class="braodcast-info"  style="background:#ffffff;">
+            <text class="braodcast-name">昵称：{{item.nickName}}</text>
+            <text class="braodcast-text">上传时间：{{item.uploadTime}}</text>
+          </view>
+      </view>
+      <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore" hidden="{{isHideNoMore}}" style='background:#F0F0F0;'>
+        <view class="weui-loadmore__tips">我是有底线的</view>
+      </view>
+  </view>
+</view>

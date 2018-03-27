@@ -1,0 +1,13 @@
+<view>
+  <text wx:if="{{showPic}}" animation="{{showAnimation}}">简化后</text>
+  <view wx:if="{{!showPic}}">
+    <image animation="{{hideAnimation}}" src='{{beforePicture}}' mode="widthFix" style="width: 100%;"/>
+  </view>
+  <view wx:if="{{showPic}}">
+    <image src='{{afterPicture}}' mode="widthFix" style="width: 100%;" bindtap='preview' bindlongpress='longtap'/>
+  </view>
+  <view class='button' wx:if="{{showPic}}">
+    <button animation="{{showAnimation}}" type='primary' style='margin-top:80rpx; width:40%' bindtap='reUpload'>重新上传</button>
+    <button animation="{{showAnimation}}" type='primary' style='margin-top:80rpx; width:40%' bindtap='save'>保存图片</button>
+  </view>
+</view>

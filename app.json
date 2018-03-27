@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/superindex/superindex",
+    "pages/discover/discover",
+    "pages/index/index",
+    "pages/simplify/simplify",
+    "pages/my/my",
+    "pages/scope/scope",
+    "pages/metrix/metrix",
+    "pages/onediscover/onediscover",
+    "pages/historylist/historylist",
+    "pages/onehistoryinfo/onehistoryinfo",
+    "pages/mylikelist/mylikelist",
+    "pages/onemylikeinfo/onemylikeinfo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "itrans手绘图像简化站",
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#BFBFBF"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/discover/discover",
+        "text": "发现",
+        "iconPath": "images/discover.png",
+        "selectedIconPath": "images/discover_check.png"
+      },
+      {
+      "pagePath": "pages/index/index",
+      "text": "功能页",
+      "iconPath": "images/index.png",
+      "selectedIconPath": "images/index_check.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_check.png"
+      }
+    ]
+  }
+}

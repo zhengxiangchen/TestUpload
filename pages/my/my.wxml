@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class='like-share'>
+    <view class='like'>
+      {{likeNumber}}
+      <image src='/images/like_show.png' class="work-eye" bindtap='showlike'></image>
+    </view>
+    <view class='share'>
+      {{shareNumber}}
+      <image src='/images/share_show.png' class="work-eye" bindtap='showshare'></image>
+    </view>
+  </view>
+  <view class="line"></view>
+</view>
+<view class="info_list">
+  <view class="weui_cell" bindtap='myHistory'>
+      <view class="weui_cell_hd"><image src="/images/history.png"></image></view>
+      <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p"> 上传记录 </view>
+      </view>
+  </view>
+  <view class="weui_cell" bindtap='myLike'>
+      <view class="weui_cell_hd"><image src="/images/mylike.png"></image></view>
+      <view class="weui_cell_bd">
+          <view class="weui_cell_bd_p"> 点赞记录 </view>
+      </view>
+  </view>
+</view>
+
