@@ -56,10 +56,18 @@ Page({
       success: function (res) {
         var data = res.data;
         wx.hideLoading();
-        //返回处理后的图片资源
-        wx.navigateTo({
-          url: '/pages/metrix/metrix?beforePicture=' + that.data.tempFilePaths + "&afterPicture=" + data,
-        })
+        if(data == 'error'){
+          wx.showToast({
+            image: '/images/tip.png',
+            title: '上传异常',
+            duration: 3500
+          })
+        }else{
+          //返回处理后的图片资源
+          wx.navigateTo({
+            url: '/pages/metrix/metrix?beforePicture=' + that.data.tempFilePaths + "&afterPicture=" + data,
+          })
+        }
       },
       fail: function (res) {
         wx.showToast({
