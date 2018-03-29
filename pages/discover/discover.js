@@ -7,7 +7,7 @@ Page({
   data: {
     isHideLoadMore : false,
     items: [],
-    isHideNoMore:true
+    isHideNoMore:true,
   },
 
   /**
@@ -141,4 +141,6 @@ Page({
     })
   }
 
+
+  
 })
