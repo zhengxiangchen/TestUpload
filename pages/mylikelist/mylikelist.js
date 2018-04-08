@@ -15,7 +15,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1:8080/api_v1/wx/mylike/getMyLike',
+      url: 'https://www.gzitrans.cn/api_v1/wx/mylike/getMyLike',
       data: {
         openId: app.globalData.openId,
       },
@@ -72,7 +72,7 @@ Page({
     //模拟加载
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1:8080/api_v1/wx/mylike/getMyLike',
+      url: 'https://www.gzitrans.cn/api_v1/wx/mylike/getMyLike',
       data: {
         openId: app.globalData.openId,
       },

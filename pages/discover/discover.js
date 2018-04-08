@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1:8080/api_v1/wx/discover/getDiscoverList',
+      url: 'https://www.gzitrans.cn/api_v1/wx/discover/getDiscoverList',
       success: function (res) {
         that.setData({
           items: res.data
@@ -87,7 +87,7 @@ Page({
     //模拟加载
     var that = this;
     wx.request({
-      url: 'http://127.0.0.1:8080/api_v1/wx/discover/getDiscoverList',
+      url: 'https://www.gzitrans.cn/api_v1/wx/discover/getDiscoverList',
       success: function (res) {
         wx.hideNavigationBarLoading() //完成停止加载
         wx.stopPullDownRefresh() //停止下拉刷新
@@ -107,7 +107,7 @@ Page({
     })
 
     wx.request({
-      url: 'http://127.0.0.1:8080/api_v1/wx/discover/getMoreDiscover',
+      url: 'https://www.gzitrans.cn/api_v1/wx/discover/getMoreDiscover',
       data:{
         itemsLength: that.data.items.length
       },
