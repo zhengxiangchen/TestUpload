@@ -9,7 +9,7 @@
   </swiper>
   <view class="work-header">
     <view class="work-author">
-      <image src="{{oneDiscoverInfo.userHeadPicture}}" class="author-image"></image>
+      <image src="{{oneDiscoverInfo.userHeadPicture}}" class="author-image" bindtap='toPeople'></image>
       <view>
         <view class="author-name">{{oneDiscoverInfo.nickName}}</view>
         <view class="author-misc">{{oneDiscoverInfo.uploadTime}}</view>
@@ -71,6 +71,7 @@
   <view class="comment-fixed">
     <form bindsubmit="formSubmit">
       <view class="cf-box">
+        <button class="cf-send touch-todiscover" bindtap='toDiscover'>去发现</button>
         <textarea class="cf-content" maxlength="200" name="textarea" value='{{content}}' auto-height placeholder="我来说两句" />
         <button class="cf-send touch-active" formType="submit">发送</button>
       </view>

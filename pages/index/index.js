@@ -25,6 +25,7 @@ Page({
   },
   //选择图片
   chooseimage: function () {
+    app.globalData.toLogin = false;
     var _this = this;
     wx.chooseImage({
       count: 1, // 默认9

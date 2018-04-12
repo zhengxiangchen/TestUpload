@@ -10,7 +10,7 @@ App({
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
   onShow: function (options) {
-    
+    this.login();
   },
 
   /**
@@ -29,6 +29,7 @@ App({
     })
   },
   globalData: {
+    toLogin:true,
     userInfo: null,
     openId: null,
     user:{
@@ -53,10 +54,13 @@ App({
             // 可以将 res 发送给后台解码出 unionId
             var openid = wx.getStorageSync(res.userInfo.nickName);
             that.globalData.openId = openid;
-            that.globalData.userInfo = res.userInfo
-            wx.switchTab({
-              url: '/pages/discover/discover'
-            })
+            that.globalData.userInfo = res.userInfo;
+            if (that.globalData.toLogin){
+              wx.switchTab({
+                url: '/pages/discover/discover'
+              })
+            }
+            
             if (that.userInfoReadyCallback) {
               that.userInfoReadyCallback(res)
             }

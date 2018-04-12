@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.globalData.toLogin = false;
     var that = this;
     var picurl;
     that.setData({
@@ -184,6 +185,7 @@ Page({
 
   //点击图片预览效果
   preview() {
+    app.globalData.toLogin = false;
     wx.previewImage({
       urls: [this.data.oneDiscoverInfo.simplifyPictureUrl, this.data.oneDiscoverInfo.pictureUrl],
     })
@@ -203,7 +205,7 @@ Page({
   },
 
   //点击保存图片按钮
-  save: function () {
+  save: function (e) {
     var that = this;
     wx.getSetting({
       success(res) {
@@ -265,7 +267,7 @@ Page({
   formSubmit: function (e){
     var that = this;
     var discoverContent = e.detail.value.textarea;
-    if (discoverContent.trim.length <= 0){
+    if (discoverContent.trim().length <= 0){
       wx.showToast({
         icon: 'none',
         title: '无评论内容',
@@ -308,6 +310,23 @@ Page({
         }
       })
     }
+  },
+
+
+  //点击首页按钮返回发现主页
+  toDiscover: function () {
+    wx.switchTab({
+      url: '/pages/discover/discover',
+    })
+  },
+
+
+  //点击用户头像跳转
+  toPeople: function () {
+    var that = this;
+    wx.navigateTo({
+      url: '/pages/people/people?peopleOpenId=' + that.data.oneDiscoverInfo.openId,
+    })
   },
 
 })

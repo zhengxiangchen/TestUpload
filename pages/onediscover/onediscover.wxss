@@ -254,7 +254,7 @@
   font-size: 12px;
   height: 30px;
   max-height: 40px;
-  width: 100%;
+  width: 68%;
 }
 
 .cf-send {
@@ -274,3 +274,8 @@
 .cf-send.touch-active:active {
   background-color: #b03f3e;
 }
+
+.cf-send.touch-todiscover {
+  background-color: #6666CC;
+}
+

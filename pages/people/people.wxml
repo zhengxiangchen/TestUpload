@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class='like-share'>
+    <view class='like'>
+      {{likeNumber}}
+      <image src='/images/like_show.png' class="work-eye" bindtap='showlike'></image>
+    </view>
+    <view class='share'>
+      {{shareNumber}}
+      <image src='/images/share_show.png' class="work-eye" bindtap='showshare'></image>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="que-operate flex-wrp">
+    <view class="invite flex-item">
+        <text>作品区</text>
+    </view>
+  </view>
+</view>
+
+
+
+<view class="broadcast">
+  <view class="braodcast-list">
+      <view class="braodcast-item" wx:for="{{items}}" wx:key="id">
+          <view class="braodcast-image-container" id="{{item.id}}" bindtap='onehistoryinfo'>
+              <image class="braodcast-image" src="{{item.pictureUrl}}"></image>
+          </view>
+          <view class="braodcast-info"  style="background:#ffffff;">
+              <text class="braodcast-text">上传时间：{{item.uploadTime}}</text>
+          </view>
+      </view>
+  </view>
+</view>

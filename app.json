@@ -5,6 +5,7 @@
     "pages/index/index",
     "pages/simplify/simplify",
     "pages/my/my",
+    "pages/people/people",
     "pages/scope/scope",
     "pages/metrix/metrix",
     "pages/onediscover/onediscover",

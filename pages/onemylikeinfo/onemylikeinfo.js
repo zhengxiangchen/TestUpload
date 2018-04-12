@@ -158,6 +158,7 @@ Page({
 
   //点击图片预览效果
   preview() {
+    app.globalData.toLogin = false;
     wx.previewImage({
       urls: [this.data.oneDiscoverInfo.simplifyPictureUrl],
     })
@@ -268,6 +269,15 @@ Page({
         }
       })
     }
-  }
+  },
+
+
+  //点击用户头像跳转
+  toPeople: function () {
+    var that = this;
+    wx.navigateTo({
+      url: '/pages/people/people?peopleOpenId=' + that.data.oneDiscoverInfo.openId,
+    })
+  },
 
 })

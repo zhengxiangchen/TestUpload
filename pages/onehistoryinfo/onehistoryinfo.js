@@ -157,6 +157,7 @@ Page({
 
   //点击图片预览效果
   preview() {
+    app.globalData.toLogin = false;
     wx.previewImage({
       urls: [this.data.oneDiscoverInfo.pictureUrl, this.data.oneDiscoverInfo.simplifyPictureUrl],
     })

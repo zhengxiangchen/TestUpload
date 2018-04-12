@@ -9,7 +9,7 @@
   </swiper>
   <view class="work-header">
     <view class="work-author">
-      <image src="{{oneDiscoverInfo.userHeadPicture}}" class="author-image"></image>
+      <image src="{{oneDiscoverInfo.userHeadPicture}}" class="author-image" bindtap='toPeople'></image>
       <view>
         <view class="author-name">{{oneDiscoverInfo.nickName}}</view>
         <view class="author-misc">{{oneDiscoverInfo.uploadTime}}</view>
