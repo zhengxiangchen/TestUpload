@@ -9,7 +9,8 @@ Page({
     id: '',
     oneDiscoverInfo: {},
     likePicture: false,
-    viewHeight: 0
+    viewHeight: 800,
+    picurl: ''
   },
 
   /**
@@ -17,7 +18,6 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var picurl;
     that.setData({
       id: options.id
     })
@@ -27,21 +27,8 @@ Page({
         pictureUploadLogsId: that.data.id
       },
       success: function (res) {
-        picurl = res.data.simplifyPictureUrl;
-
-        wx.getImageInfo({
-          src: picurl,
-          success: function (res) {
-            //宽高比  
-            var ratio = res.width / res.height;
-            //计算的高度值  
-            var viewHeight = 750 / ratio;
-            that.setData({
-              viewHeight: viewHeight
-            })
-          }
-        })
-
+        that.data.picurl = res.data.simplifyPictureUrl;
+        var info = res.data;
 
         that.setData({
           oneDiscoverInfo: res.data
@@ -49,24 +36,37 @@ Page({
       }
     }),
 
-      wx.request({
-        url: 'https://www.gzitrans.cn/api_v1/wx/discover/toCheckLike',
-        data: {
-          openId: app.globalData.openId,
-          pictureUploadLogsId: that.data.id
-        },
-        success: function (res) {
-          that.setData({
-            likePicture: res.data
-          })
-        }
-      })
+    wx.request({
+      url: 'https://www.gzitrans.cn/api_v1/wx/discover/toCheckLike',
+      data: {
+        openId: app.globalData.openId,
+        pictureUploadLogsId: that.data.id
+      },
+      success: function (res) {
+        that.setData({
+          likePicture: res.data
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    var that = this;
+    wx.getImageInfo({
+      src: that.data.picurl,
+      success: function (res) {
+        //宽高比  
+        var ratio = res.width / res.height;
+        //计算的高度值  
+        var viewHeight = 750 / ratio;
+        that.setData({
+          viewHeight: viewHeight
+        })
+      }
+    })
 
   },
 

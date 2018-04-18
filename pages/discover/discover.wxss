@@ -88,12 +88,13 @@
 }
 .weui-loadmore {
   width: 100%;
-  margin: 1.5em auto;
+  margin: 2.0em auto;
   line-height: 1.6em;
   font-size: 14px;
   text-align: center;
 }
 .weui-loadmore__tips {
+  
   display: inline-block;
   vertical-align: middle;
 }
