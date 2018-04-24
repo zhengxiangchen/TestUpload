@@ -16,17 +16,29 @@
       </view>
     </view>
     <view class="work-view">
-      <view wx:if="{{likePicture}}">
-        {{oneDiscoverInfo.likeNumber}}
-        <image src="/images/like_check.png" class="work-eye" bindtap='toChange'/>
-        {{oneDiscoverInfo.shareNumber}}
-        <button open-type='share' size='mini'>分享</button>
+      <view class="work-item" wx:if="{{likePicture}}">
+        <view class="work-my">
+          {{oneDiscoverInfo.likeNumber}}
+          <image src="/images/like_check.png" class="work-eye" bindtap='toChange' style='padding:0px 3px;'/>
+        </view>
+        <view class="work-my">
+          {{oneDiscoverInfo.shareNumber}}
+          <button open-type='share' size='mini' plain='true' style='border:none; padding:0px 3px; width:32px; height:32px;'>
+            <image src='/images/share.png' style='width:32px; height:32px;'></image>
+          </button>
+        </view>
       </view>
-      <view wx:else>
-        {{oneDiscoverInfo.likeNumber}}
-        <image src="/images/like.png" class="work-eye" bindtap='toChange'/>
-        {{oneDiscoverInfo.shareNumber}}
-        <button open-type='share' size='mini'>分享</button>
+      <view class="work-item" wx:else>
+        <view class="work-my">
+          {{oneDiscoverInfo.likeNumber}}
+          <image src="/images/like.png" class="work-eye" bindtap='toChange' style='padding:0px 3px;'/>
+        </view>
+        <view class="work-my">
+          {{oneDiscoverInfo.shareNumber}}
+          <button open-type='share' size='mini' plain='true' style='border:none; padding:0px 2px; width:32px; height:32px;'>
+            <image src='/images/share.png' style='width:32px; height:32px;'></image>
+          </button>
+        </view>
       </view>
     </view>
   </view>
@@ -72,7 +84,7 @@
     <form bindsubmit="formSubmit">
       <view class="cf-box">
         <button class="cf-send touch-todiscover" bindtap='toDiscover'>去发现</button>
-        <textarea class="cf-content" maxlength="200" name="textarea" value='{{content}}' auto-height placeholder="我来说两句" />
+        <textarea class="cf-content" maxlength="200" name="textarea" value='{{content}}' auto-height placeholder="我来说两句" fixed='true'/>
         <button class="cf-send touch-active" formType="submit">发送</button>
       </view>
     </form>

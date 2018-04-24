@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/superindex/superindex",
+    "pages/welcome/welcome",
     "pages/discover/discover",
     "pages/index/index",
     "pages/simplify/simplify",

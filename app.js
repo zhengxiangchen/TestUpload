@@ -56,8 +56,11 @@ App({
             that.globalData.openId = openid;
             that.globalData.userInfo = res.userInfo;
             if (that.globalData.toLogin){
-              wx.switchTab({
-                url: '/pages/discover/discover'
+              // wx.switchTab({
+              //   url: '/pages/discover/discover'
+              // })
+              wx.redirectTo({
+                url: '/pages/welcome/welcome',
               })
             }
             

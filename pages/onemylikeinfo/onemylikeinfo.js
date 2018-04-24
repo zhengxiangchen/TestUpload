@@ -271,6 +271,63 @@ Page({
     }
   },
 
+  //点击发送按钮提交评论
+  formSubmit: function (e) {
+    var that = this;
+    var discoverContent = e.detail.value.textarea;
+    if (discoverContent.trim().length <= 0) {
+      wx.showToast({
+        icon: 'none',
+        title: '无评论内容',
+      })
+    } else {
+      wx.showLoading({
+        title: '提交中',
+      })
+      wx.request({
+        url: 'https://www.gzitrans.cn/api_v1/wx/discuss/receiveDiscuss',
+        data: {
+          openId: app.globalData.openId,
+          pictureUploadLogsId: that.data.id,
+          discussContent: discoverContent
+        },
+        success: function (res) {
+          if (res.data == 'success') {
+            wx.hideLoading();
+            wx.showToast({
+              title: '提交成功',
+              duration: 2000
+            })
+
+            that.setData({
+              content: ''
+            })
+
+            wx.request({
+              url: 'https://www.gzitrans.cn/api_v1/wx/discover/getDiscoverInfo',
+              data: {
+                pictureUploadLogsId: that.data.id
+              },
+              success: function (res) {
+                that.setData({
+                  oneDiscoverInfo: res.data
+                })
+              }
+            })
+          }
+        }
+      })
+    }
+  },
+
+
+  //点击首页按钮返回发现主页
+  toDiscover: function () {
+    wx.switchTab({
+      url: '/pages/discover/discover',
+    })
+  },
+
 
   //点击用户头像跳转
   toPeople: function () {
