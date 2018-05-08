@@ -16,10 +16,6 @@ ps:简化草图部分的代码属于机密,无法提供.<br>
 ### 有上传记录类似社区功能<br>
 ![](https://github.com/zhengxiangchen/TestUpload/blob/master/screen/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180326161709.png?raw=true)
 
-#### 鼓励一下
-![](https://github.com/zhengxiangchen/TestUpload/blob/master/screen/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180326161905.jpg?raw=true)
-![](https://github.com/zhengxiangchen/TestUpload/blob/master/screen/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20180326161913.jpg?raw=true)
-
 
 
 
