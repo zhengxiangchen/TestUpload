@@ -110,5 +110,57 @@ Page({
     wx.navigateTo({
       url: '/pages/onehistoryinfo/onehistoryinfo?id=' + id,
     })
+  },
+
+  //长按图片弹出删除菜单
+  toDelete: function (event) {
+    var that = this;
+    var id = event.currentTarget.id;
+    wx.showActionSheet({
+      itemList: ['删除'],
+      success(res) {
+        that.delete(id);
+      }
+    })
+  },
+
+  //删除上传记录
+  delete: function (id) {
+    var that = this;
+    wx.request({
+      url: 'https://www.gzitrans.cn/api_v1/wx/history/deleteOneHistory',
+      data: {
+        pictureUploadLogsId: id,
+      },
+      success: function (res) {
+        wx.showToast({
+          icon: 'none',
+          title: '删除成功',
+        })
+        setTimeout(function () {
+          wx.request({
+            url: 'https://www.gzitrans.cn/api_v1/wx/history/getMyHistory',
+            data: {
+              openId: app.globalData.openId,
+            },
+            success: function (res) {
+              that.setData({
+                items: res.data
+              })
+            },
+            fail: function (res) {
+              console.log(res);
+              wx.showToast({
+                title: '服务器维护中',
+                image: '/images/tip.png',
+                duration: 3500
+              })
+            }
+          })
+        }, 1500)
+      }
+    })
+
+    
   }
 })

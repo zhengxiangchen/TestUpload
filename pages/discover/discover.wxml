@@ -5,8 +5,20 @@
               <image class="braodcast-image" src="{{item.pictureUrl}}"></image>
           </view>
           <view class="braodcast-info"  style="background:#ffffff;">
-            <text class="braodcast-name">昵称：{{item.nickName}}</text>
-            <text class="braodcast-text">上传时间：{{item.uploadTime}}</text>
+            <view class='name-info'>
+              <image src='{{item.avatarUrl}}' class="name-info-headpic"></image>
+              <text class="braodcast-name">{{item.nickName}}</text>
+            </view>
+            <view class='name-info'>
+              <view class='name-info-left'>
+                <image src='/images/like.png' class="name-info-image"></image>
+                <text class="braodcast-number">{{item.likeNumber}}</text>
+              </view>
+              <view class='name-info-right'>
+                <image src='/images/share.png' class="name-info-image"></image>
+                <text class="braodcast-number">{{item.shareNumber}}</text>
+              </view>
+            </view>
           </view>
       </view>
       <view class="weui-loadmore" hidden="{{isHideLoadMore}}">

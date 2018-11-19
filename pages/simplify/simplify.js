@@ -77,9 +77,9 @@ Page({
   },
   //点击重新上传按钮
   reUpload: function(){
-    //返回上一页面重新选择
-    wx.navigateBack({
-      
+    //返回上传页面重新选择
+    wx.switchTab({
+      url: '/pages/index/index',
     })
   },
   //动画的方式隐藏图片

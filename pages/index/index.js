@@ -66,7 +66,7 @@ Page({
           })
         }else{
           //返回处理后的图片资源
-          wx.navigateTo({
+          wx.redirectTo({
             url: '/pages/metrix/metrix?beforePicture=' + that.data.tempFilePaths + "&afterPicture=" + data,
           })
         }

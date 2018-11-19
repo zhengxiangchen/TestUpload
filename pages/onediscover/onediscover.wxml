@@ -18,26 +18,26 @@
     <view class="work-view">
       <view class="work-item" wx:if="{{likePicture}}">
         <view class="work-my">
+          <image src="/images/like_check.png" class="work-eye" bindtap='toChange' style='padding:1px 3px;'/>
           {{oneDiscoverInfo.likeNumber}}
-          <image src="/images/like_check.png" class="work-eye" bindtap='toChange' style='padding:0px 3px;'/>
         </view>
         <view class="work-my">
-          {{oneDiscoverInfo.shareNumber}}
-          <button open-type='share' size='mini' plain='true' style='border:none; padding:0px 3px; width:32px; height:32px;'>
-            <image src='/images/share.png' style='width:32px; height:32px;'></image>
+          <button open-type='share' size='mini' plain='true' style='border:none; padding:1px 1px; width:30px; height:30px;'>
+            <image src='/images/share.png' style='width:30px; height:30px;'></image>
           </button>
+          {{oneDiscoverInfo.shareNumber}}
         </view>
       </view>
       <view class="work-item" wx:else>
         <view class="work-my">
+          <image src="/images/like.png" class="work-eye" bindtap='toChange' style='padding:1px 3px;'/>
           {{oneDiscoverInfo.likeNumber}}
-          <image src="/images/like.png" class="work-eye" bindtap='toChange' style='padding:0px 3px;'/>
         </view>
         <view class="work-my">
-          {{oneDiscoverInfo.shareNumber}}
-          <button open-type='share' size='mini' plain='true' style='border:none; padding:0px 2px; width:32px; height:32px;'>
-            <image src='/images/share.png' style='width:32px; height:32px;'></image>
+          <button open-type='share' size='mini' plain='true' style='border:none; padding:1px 1px; width:30px; height:30px;'>
+            <image src='/images/share.png' style='width:30px; height:30px;'></image>
           </button>
+          {{oneDiscoverInfo.shareNumber}}
         </view>
       </view>
     </view>

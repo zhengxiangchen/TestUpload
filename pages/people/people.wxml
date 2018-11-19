@@ -7,11 +7,11 @@
   <view class='like-share'>
     <view class='like'>
       {{likeNumber}}
-      <image src='/images/like_show.png' class="work-eye" bindtap='showlike'></image>
+      <image src='/images/like.png' class="work-eye" bindtap='showlike'></image>
     </view>
     <view class='share'>
       {{shareNumber}}
-      <image src='/images/share_show.png' class="work-eye" bindtap='showshare'></image>
+      <image src='/images/share.png' class="work-eye" bindtap='showshare'></image>
     </view>
   </view>
   <view class="line"></view>
@@ -31,7 +31,10 @@
               <image class="braodcast-image" src="{{item.pictureUrl}}"></image>
           </view>
           <view class="braodcast-info"  style="background:#ffffff;">
-              <text class="braodcast-text">上传时间：{{item.uploadTime}}</text>
+            <view class='name-info'>
+              <image src='/images/date.png' class="name-info-image"></image>
+              <text class="braodcast-name">{{item.uploadTime}}</text>
+            </view>
           </view>
       </view>
   </view>

@@ -1,13 +1,23 @@
 <view class="broadcast">
-  <view class="braodcast-list">
-      <view class="braodcast-item" wx:for="{{items}}" wx:key="id">
-          <view class="braodcast-image-container" id="{{item.id}}" bindtap='onemylikeinfo'>
-              <image class="braodcast-image" src="{{item.pictureUrl}}"></image>
-          </view>
-          <view class="braodcast-info"  style="background:#ffffff;">
-              <text class="braodcast-name">上传者：{{item.nickName}}</text>
-              <text class="braodcast-text">上传时间：{{item.uploadTime}}</text>
-          </view>
-      </view>
+  <view wx:if="{{items.length > 0}}">
+    <view class="braodcast-list">
+        <view class="braodcast-item" wx:for="{{items}}" wx:key="id">
+            <view class="braodcast-image-container" id="{{item.id}}" bindtap='onemylikeinfo'>
+                <image class="braodcast-image" src="{{item.pictureUrl}}"></image>
+            </view>
+            <view class="braodcast-info"  style="background:#ffffff;">
+              <view class='name-info'>
+                <image src='/images/head.png' class="name-info-image"></image>
+                <text class="braodcast-name">{{item.nickName}}</text>
+              </view>
+              <!-- <text class="braodcast-text">上传时间：{{item.uploadTime}}</text> -->
+            </view>
+        </view>
+    </view>
+  </view>
+
+  <view class='text' wx:else>
+    <image src="../../images/add.png" mode="scaleToFill" style="width: 500rpx; height: 500rpx"/>
+    <text style="margin-top:150rpx; color:#5c5c5c;">您还没有点过赞哦!</text>
   </view>
 </view>

@@ -27,12 +27,27 @@ Page({
         pictureUploadLogsId: that.data.id
       },
       success: function (res) {
-        that.data.picurl = res.data.simplifyPictureUrl;
-        var info = res.data;
+        if(res.data.isDelete == 1){
+          wx.showToast({
+            title: '用户已删除图片',
+            image: '/images/tip.png',
+            mask:true,
+            duration: 3500
+          })
+          setTimeout(function () {
+            wx.navigateBack({
+              
+            })
+          }, 3500)
+        }else{
+          that.data.picurl = res.data.simplifyPictureUrl;
+          var info = res.data;
 
-        that.setData({
-          oneDiscoverInfo: res.data
-        })
+          that.setData({
+            oneDiscoverInfo: res.data
+          })
+        }
+        
       }
     }),
 
